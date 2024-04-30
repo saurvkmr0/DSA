@@ -30,20 +30,20 @@ void insert(int arr[], int temp)
 int bfs(int arr[], int target)
 {
     int queue[20]={0};
-    int i=0,q=0;
+    int check=0,store=0;
     while(1)
     {
-        if(arr[queue[i]]==target)
+        if(arr[queue[check]]==target)
         {
-            return i;
+            return check;
         }
         else
         {
-            q++;
-            queue[q]=i*2+1;
-            q++;
-            queue[i+2]=i*2+2;
-            i++;
+            store++;
+            queue[store]=check*2+1;
+            store++;
+            queue[store]=check*2+2;
+            check++;
         }
     }
 }
